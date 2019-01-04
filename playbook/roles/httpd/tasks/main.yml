@@ -1,0 +1,15 @@
+---
+- name: install httpd with yum
+  yum: name={{ item.package }}
+  loop:
+  - { package: httpd }
+  - { package: mod_ssl }
+
+- name: create apache document root dir
+  file:
+    path: "/data/apache/www/html"
+    state: directory
+    owner: apache
+    group: apache
+    mode: 0755
+    recurse: yes
