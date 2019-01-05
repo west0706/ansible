@@ -1,0 +1,10 @@
+---
+- name: restart apache webserver
+  service:
+    name: httpd
+    state: restarted
+
+- name: start apache webserver
+  service:
+    name: httpd
+    state: started

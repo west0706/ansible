@@ -1,0 +1,5 @@
+---
+- name: install django with pip
+  pip: name={{ item.package }}
+  loop:
+  - { package: django }
