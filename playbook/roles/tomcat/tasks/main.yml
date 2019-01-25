@@ -4,7 +4,7 @@
 
 - name: Download Tomcat 8.5.x
   get_url:
-    url: http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz
+    url: http://archive.apache.org/dist/tomcat/tomcat-8/v8.5.9/bin/{{ tomcat_file }}.tar.gz
     dest: /home/ec2-user            
     mode: 0440
     owner: ec2-user
@@ -12,14 +12,20 @@
 
 - name: Unzip Tomcat
   unarchive:
-    src: /home/ec2-user/apache-tomcat-8.5.9.tar.gz
+    src: /home/ec2-user/{{ tomcat_file }}.tar.gz
     dest: /opt
     remote_src: yes 
     owner: ec2-user
     group: ec2-user            
 
+  #- name: Change tomcat port
+  #  template:
+  #    src: "tomcat-server.xml.j2"
+  #    dest: "/opt/{{ tomcat_file }}/conf/server.xml"
+
 - name: Create symbolic link           
   file:
-    src: /opt/apache-tomcat-8.5.9
+    # src: /opt/apache-tomcat-8.5.9
+    src: /opt/{{ tomcat_file }}
     dest: /usr/share/tomcat
     state: link
