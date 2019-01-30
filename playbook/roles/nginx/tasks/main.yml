@@ -7,3 +7,28 @@
   yum:
     name: nginx
     state: latest            
+
+- name: Update nginx config
+  copy:
+    src: "../files/nginx.conf"
+    dest: "/etc/nginx/nginx.conf"
+    mode: 0644
+
+- name: Create site-enabled folder
+  file:
+    path: /etc/nginx/sites-enabled
+    state: directory
+    mode: 0755
+
+- name: Update nginx site-enabled config
+  copy:
+    src: "../files/gict.conf"
+    dest: "/etc/nginx/sites-enabled"
+    mode: 0644
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted
+
+  
