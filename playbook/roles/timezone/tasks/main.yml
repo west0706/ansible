@@ -1,0 +1,5 @@
+---
+
+- name: set timezone to seoul
+  timezone:
+    name: Asia/Seoul
