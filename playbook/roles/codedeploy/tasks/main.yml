@@ -1,0 +1,19 @@
+---
+
+- name: Install ruby wget 
+  yum:
+    name: "{{ item.name}}" 
+    state: latest
+  with_items:
+    - { name: ruby }
+    - { name: wget }
+
+- name: Download codedeploy agent
+  get_url:
+    url: https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/install 
+    dest: /home/ec2-user/
+    mode: 0750
+
+- name: Install codedeploy agent
+  shell: /home/ec2-user/install auto
+
