@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: ec2-user
+  become: yes
+  become_user: root
+  roles:
+  - timezone
+  - codedeploy
+  - cloudwatch
+  - nginx 
+  - tomcat  
+
+  vars:
+    file_cm: CloudWatchMonitoringScripts-1.2.2.zip

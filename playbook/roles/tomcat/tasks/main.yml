@@ -12,6 +12,14 @@
     owner: ec2-user
     group: ec2-user            
 
+- name: Create tomcat root folder
+  file:
+    path: /home/webservices
+    state: directory
+    owner: ec2-user
+    group: ec2-user            
+    mode: 0755
+
 - name: Unzip Tomcat
   unarchive:
     src: /home/ec2-user/{{ tomcat_file }}.tar.gz
@@ -24,14 +32,6 @@
   #  template:
   #    src: "tomcat-server.xml.j2"
   #    dest: "/opt/{{ tomcat_file }}/conf/server.xml"
-
-- name: Create tomcat root folder
-  file:
-    path: /home/webservices
-    state: directory
-    owner: ec2-user
-    group: ec2-user            
-    mode: 0755
 
 - name: Create symbolic link           
   file:

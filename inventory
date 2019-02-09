@@ -5,8 +5,7 @@ ansible_ssh_private_key_file = ~/keypairs/gict-prd-was-keypair.pem
 gict-was-hosts
 
 [gict-was-hosts]
-10.253.66.180
-
+10.253.67.150
 
 [gict-ap:vars]
 ansible_ssh_private_key_file = ~/keypairs/gict-prd-s4hana-ap01-keypair.pem
@@ -25,4 +24,4 @@ ansible_ssh_private_key_file = ~/keypairs/gict-prd-s4hana-db-keypair.pem
 gict-hdb-hosts
 
 [gict-hdb-hosts]
-10.253.68.137
+10.253.68.48
