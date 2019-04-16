@@ -1,0 +1,28 @@
+---
+
+# install docker for ubuntu
+- name: install prerequisites
+  apt:
+    name: "{{ item.name }}"
+    state: present 
+    update_cache: yes
+  with_items:
+    - { name: apt-transport-https }
+    - { name: ca-certificates }
+    - { name: curl }
+    - { name: software-properties-common }
+
+- name: add docker gpg key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+
+- name: add docker api repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+
+- name: install docker
+  apt:
+    name: docker-ce
+  
+- name: modify privilege
+  shell: usermod -aG docker ${USER}

@@ -3,6 +3,5 @@
   remote_user: ubuntu 
   become: yes
   become_user: root
-  gather_facts: false
   roles:
-  - ping 
+  - docker 
