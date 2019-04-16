@@ -1,7 +1,8 @@
 ---
-- easy_install:
-  name: pip
-  state: latest
+- name: install pip
+  apt: 
+    name: python-pip
+    state: latest 
 
 - name: install django with pip
   pip: name={{ item.package }}

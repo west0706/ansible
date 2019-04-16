@@ -1,38 +1,10 @@
-[gict-was:vars]
-ansible_ssh_private_key_file = ~/keypairs/gict-prd-was-keypair.pem
+[instance-qd:vars]
+ansible_ssh_private_key_file = ~/keypairs/jjy-qd-test-keypair.pem
 
-[gict-was:children]
-gict-was-hosts
+[instance-qd:children]
+instance-qd-hosts
 
-[gict-was-hosts]
-10.253.67.150
-
-[gict-ap:vars]
-ansible_ssh_private_key_file = ~/keypairs/gict-prd-s4hana-ap01-keypair.pem
-
-[gict-ap:children]
-gict-ap-hosts
-
-[gict-ap-hosts]
-10.253.68.157
-
-
-[gict-hdb:vars]
-ansible_ssh_private_key_file = ~/keypairs/gict-prd-s4hana-db-keypair.pem
-
-[gict-hdb:children]
-gict-hdb-hosts
-
-[gict-hdb-hosts]
-10.253.68.48
-
-
-[epoint-was:vars]
-ansible_ssh_private_key_file = ~/keypairs/epoint-prd-was-keypair.pem
-
-[epoint-was:children]
-epoint-was-hosts
-
-[epoint-was-hosts]
-10.254.4.115
-10.254.5.102
+[instance-qd-hosts]
+172.19.138.164
+172.19.139.179
+172.19.148.107
