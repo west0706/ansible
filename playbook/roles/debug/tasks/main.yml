@@ -1,0 +1,24 @@
+---
+- name: executing sample command
+  shell: echo "TEST MESSAGE"  
+  register: value
+
+- name: printing variable
+  debug:
+    var: value
+
+- name: printing variable with stdout
+  debug:
+    var: value.stdout
+
+- name: printing vaiable with adding extra message
+  debug:
+    msg: "The Message is {{ value.stdout }}"
+
+- name: printing ip address
+  debug:
+    msg: "The system's ip address is {{ ansible_default_ipv4.address }}"
+
+- name: printing target network info 
+  debug:
+    msg: "The system's network info is {{ ansible_default_ipv4 }}"
