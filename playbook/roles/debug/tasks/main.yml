@@ -1,6 +1,6 @@
 ---
-- name: executing sample command
-  shell: echo "TEST MESSAGE"  
+- name: executing sample command {{title}}
+  shell: echo {{ title }}
   register: value
 
 - name: printing variable

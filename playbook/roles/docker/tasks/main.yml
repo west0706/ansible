@@ -1,11 +1,10 @@
 ---
-
 # install docker for ubuntu
 - name: install prerequisites
   apt:
     name: "{{ item.name }}"
     state: present 
-    update_cache: yes
+    # update_cache: yes
   with_items:
     - { name: apt-transport-https }
     - { name: ca-certificates }

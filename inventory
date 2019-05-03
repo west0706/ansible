@@ -6,7 +6,7 @@ ansible_python_interpreter=/usr/bin/python3
 instance-qd-hosts
 
 [instance-qd-hosts]
-#172.19.138.164
+172.19.138.164
 #172.19.139.179
 #172.19.148.107
-172.19.139.182
+#172.19.139.182
