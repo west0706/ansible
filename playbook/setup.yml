@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: ubuntu 
+  become: yes
+  become_user: root
+  gather_facts: True
+  tasks:
+    - name: Get hostname
+      command: /bin/hostname
+      register: my_hostname
+
+    - debug: var=my_hostname['stdout']

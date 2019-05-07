@@ -1,0 +1,6 @@
+---
+
+# Settings
+ansible_ssh_private_key_file: ~/keypairs/jjy-qd-test-keypair.pem
+#remote_user: ubuntu
+
