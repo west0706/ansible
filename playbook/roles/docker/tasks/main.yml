@@ -26,6 +26,8 @@
 - name: Install docker
   apt:
     name: docker-ce
+    state: present
+  notify: restart docker
   
 - name: Add docker users to the docker group
   user:
