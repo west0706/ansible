@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: "{{ remote_user }}"
+  become: yes
+  gather_facts: True 
+  tasks:
+    - name: "변수 확인"
+      debug:
+        msg: "변수 my_var의 값은 {{ my_var }}이다."
+
+  vars:
+    my_var: jang         
