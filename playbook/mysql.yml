@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: "{{ remote_user }}"
+  become: yes
+  become_user: root
+  roles:
+  - mysql
+
+

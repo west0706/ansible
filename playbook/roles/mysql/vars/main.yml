@@ -1,0 +1,10 @@
+---
+# MySQL installation
+mysql_state: present
+
+# MySQL database 
+mysql_db_name: jjy
+mysql_db_state: present
+
+# MySQL User
+mysql_user_state: present

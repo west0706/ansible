@@ -9,11 +9,11 @@
 
 - name: printing variable with stdout
   debug:
-    var: value.stdout
+    var: value['stdout']
 
-- name: printing vaiable with adding extra message
-  debug:
-    msg: "The Message is {{ value.stdout }}"
+#- name: printing vaiable with adding extra message
+#  debug:
+#    msg: "The Message is {{ value.stdout }}"
 
 - name: printing ip address
   debug:
@@ -22,3 +22,11 @@
 - name: printing target network info 
   debug:
     msg: "The system's network info is {{ ansible_default_ipv4 }}"
+
+- name: Write a file.
+  #shell: touch ~/a.txt
+  file:
+    path: ~/AAA.txt
+#    state: touch
+    
+  

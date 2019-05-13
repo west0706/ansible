@@ -1,11 +1,11 @@
-[openstack-qd:vars]
+[open-qd:vars]
 # ansible_python_interpreter=/usr/bin/python3
 
-[openstack-qd:children]
-openstack-qd-hosts
+[open-qd:children]
+open-qd-hosts
 
-[openstack-qd-hosts]
-172.19.138.164
+[open-qd-hosts]
+#172.19.138.164
 #172.19.139.179
-#172.19.148.107
+172.19.148.107
 #172.19.139.182

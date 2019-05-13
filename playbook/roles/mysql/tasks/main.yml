@@ -1,0 +1,33 @@
+---
+# - name: Upgrade pip latest
+  # pip:
+  #  name: python-pip
+  #  state: present 
+  # shell: pip install --upgrade pip
+
+- name: Install mysql
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ mysql_state }}" 
+  with_items:
+    - { name: python-mysqldb }
+    - { name: mysql-server }
+
+- name: Start the mysql service
+  service:
+    name: mysql
+    state: started
+    enabled: true
+
+- name: Create a new database with name "{{ mysql_db_name }}"
+  mysql_db:
+    name: "{{ mysql_db_name }}"
+    state: "{{ mysql_db_state }}" 
+
+- name: Create database user 
+  mysql_user:
+    name: jjy
+    password: 123456    
+    priv: '*.*:ALL,GRANT'
+    state: "{{ mysql_user_state }}" 
+

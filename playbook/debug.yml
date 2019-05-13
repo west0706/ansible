@@ -1,8 +1,11 @@
 ---
 - hosts: all
   remote_user: "{{ remote_user }}"
-  become: yes
-  become_user: root
+  #become: yes
+  #become_user: root
   gather_facts: True 
   roles:
   - debug 
+
+  vars:
+  - remote_user: ubuntu 
