@@ -1,7 +1,13 @@
 ---
 - hosts: all
+<<<<<<< HEAD
   remote_user: "{{ remote_user }}" 
   become: yes
+=======
+  remote_user: "{{ remote_user }}"
+  become: yes
+  become_user: root
+>>>>>>> 95931d07c24bc719d6e0dd2076e09db998d5c80d
   gather_facts: True 
   roles:
   - ping 

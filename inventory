@@ -9,3 +9,10 @@ open-qd-hosts
 #172.19.139.179
 172.19.148.107
 #172.19.139.182
+
+
+[aws-qd:children]
+aws-qd-hosts
+
+[aws-qd-hosts]
+10.0.0.165
