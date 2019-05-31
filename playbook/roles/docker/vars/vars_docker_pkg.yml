@@ -1,0 +1,8 @@
+---
+# Required docker packages
+docker_pkg:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - software-properties-common
+

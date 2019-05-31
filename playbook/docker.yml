@@ -3,5 +3,14 @@
   remote_user: "{{ remote_user }}"
   become: yes
   become_user: root
+#  vars_files:
+#    - vars/vars_docker_pkg.yml
+  vars:
+    docker_pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+
   roles:
-  - docker 
+    - docker 

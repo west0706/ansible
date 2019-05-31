@@ -6,14 +6,14 @@
 
 - name: Install prerequisites for {{ ansible_facts['os_family'] }}
   apt:
-    name: "{{ item.name }}"
-    state: present 
+    name: "{{ item }}"
+    state: latest 
     update_cache: yes
-  with_items:
-    - { name: apt-transport-https }
-    - { name: ca-certificates }
-    - { name: curl }
-    - { name: software-properties-common }
+  loop: "{{ docker_pkg }}"
+#    - apt-transport-https
+#    - ca-certificates
+#    - curl
+#    - software-properties-common
 
 - name: Add docker gpg key
   apt_key:
